@@ -20,9 +20,7 @@ RUN apt-get -y update \
     && wget -O renpy-$RENPY_VERSION-sdk.tar.bz2 https://www.renpy.org/dl/$RENPY_VERSION/renpy-$RENPY_VERSION-sdk.tar.bz2 \
     && tar -xf renpy-$RENPY_VERSION-sdk.tar.bz2 \
     && rm renpy-$RENPY_VERSION-sdk.tar.bz2 \
-    && mv renpy-$RENPY_VERSION-sdk $RENPY_DIR \
-    && wget -O /web.zip https://www.renpy.org/dl/$RENPY_VERSION/renpy-$RENPY_VERSION-web.zip \
-    && unzip /web.zip \
-    && rm /web.zip
+    && mv renpy-$RENPY_VERSION-sdk $RENPY_DIR
 
-COPY repackage.sh $RENPY_DIR/repackage.sh
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT [ "sh", "entrypoint.sh" ]
