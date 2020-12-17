@@ -27,4 +27,4 @@ ENV SDL_AUDIODRIVER="dummy" \
 
 COPY --from=0 $RENPY_DIR $RENPY_DIR
 COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT [ "sh", "entrypoint.sh" ]
+ENTRYPOINT [ "sh", "-c", "entrypoint.sh" ]
