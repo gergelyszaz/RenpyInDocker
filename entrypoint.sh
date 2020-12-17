@@ -1,4 +1,4 @@
 #! bin/sh
 
-cd /renpy/ 
+cd $RENPY_DIR
 ./renpy.sh $@
