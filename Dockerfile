@@ -1,7 +1,7 @@
  FROM ubuntu:latest AS build
 
 ARG RENPY_VERSION
-ENV RENPY_VERSION=${RENPY_VERSION:-"7.3.5"} \
+ENV RENPY_VERSION=${RENPY_VERSION:-"7.4.0"} \
     RENPY_DIR="/renpy"
 
 RUN apt-get -y update \
